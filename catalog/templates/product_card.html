@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{product.category}}/{{product.product_name}}{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+    <div class="container card shadow-sm" style="display: flex; align-items: center;">
+        <h1> {{product.product_name}} </h1>
+        <h6> Категория: {{product.category}} </h6>
+        <img src="/media/{{ product.image }}" alt="Нет изображения" style="justify-content: center;">
+        <h2>Цена - {{product.price}}</h2>
+        <div class="card-body">
+            <p class="card-text">Описание: {{product.description | truncatechars:100 | default:"Описание отсутствует"}}</p>
+        </div>
+    </div>
+{% endblock %}
