@@ -22,7 +22,7 @@
     https://github.com/nikita-sychev49ru/Django.git
     ```
 
-2.  **Перейдите в папку проекта:**
+2.  **Перейдите в папку проекта: **
 
     ```
     cd Project_DJ
