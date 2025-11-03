@@ -1,0 +1,125 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "category_name": "Микро-сервисы",
+        "description": "Небольшие приложения, облегчающие вашу жизнь"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "category_name": "Игры",
+        "description": "Игры позволят скоротать время, пошевелить мозгами или отдохнуть от дел"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "category_name": "Карты, навигация",
+        "description": "Приложения для поиска адресов и маршрутов"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "category_name": "Финансы",
+        "description": "Приложения для учета финансов и ведения бюджета"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "product_name": "Напоминалка",
+        "description": "Трудно все удержать в голове? Доверьте организацию дел нашей \"Напоминалке\"!",
+        "image": "images/list_org.png",
+        "category": 1,
+        "price": 500.0,
+        "created_at": "2025-07-25T16:37:28.587Z",
+        "updated_at": "2025-07-25T16:37:28.587Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "product_name": "Валютный калькулятор",
+        "description": "Приложение поможет быстро посчитать сумму в любой из десятков доступных валют",
+        "image": "images/currency.png",
+        "category": 1,
+        "price": 299.99,
+        "created_at": "2025-07-25T16:40:49.931Z",
+        "updated_at": "2025-07-25T16:40:49.931Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "product_name": "Пасьянсы",
+        "description": "В приложении доступно 8 самых популярных пасьянсов",
+        "image": "images/cards.png",
+        "category": 2,
+        "price": 350.0,
+        "created_at": "2025-07-25T16:44:04.583Z",
+        "updated_at": "2025-07-25T16:44:04.583Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+        "product_name": "Помощник туриста",
+        "description": "Самые удобные маршруты для пеших экскурсий",
+        "image": "map.png",
+        "category": 3,
+        "price": 950.0,
+        "created_at": "2025-07-26T09:55:00.239Z",
+        "updated_at": "2025-07-26T09:55:00.239Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+        "product_name": "Копилочка",
+        "description": "Накопи на мечту с нашим приложением",
+        "image": "pig.png",
+        "category": 4,
+        "price": 420.0,
+        "created_at": "2025-07-26T09:56:31.991Z",
+        "updated_at": "2025-07-26T09:56:31.991Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+        "product_name": "Мама+папа+...",
+        "description": "Удобное приложение для ведения семейного бюджета",
+        "image": "family.png",
+        "category": 4,
+        "price": 1499.99,
+        "created_at": "2025-07-26T09:58:41.176Z",
+        "updated_at": "2025-07-26T09:58:41.176Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "product_name": "Чек-плюс",
+        "description": "Сканируй чеки и получай выгоду",
+        "image": "check.png",
+        "category": 4,
+        "price": 599.99,
+        "created_at": "2025-07-26T10:10:09.649Z",
+        "updated_at": "2025-07-26T10:32:22.602Z"
+    }
+}
+]
