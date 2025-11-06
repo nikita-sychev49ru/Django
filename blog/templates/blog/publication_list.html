@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Список статей{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+<div class="row">
+    <a href="{% url 'blog:publication_create' %}" class="btn btn-lg btn-block btn-primary" type="submit" style="box-shadow: 4px 4px 10px yellow; margin-bottom: 30px; margin-top: 30px;">Написать статью</a>
+    {% for publication in publications %}
+    <div style="display: flex; background-color: white; align-items: center; border-bottom: 1px solid white; margin-bottom: 30px;">
+                <div style="float: left; width: 20%;">
+                    <img src="/media/{{ publication.preview }}" alt="Нет изображения" style="max-width: 100%; max-height: 100%; object-fit: cover;"/>
+                </div>
+                <div style="float: left; width: 2%;"></div>
+                <div style="float: left; text-align: left;">
+                    <a class="btn btn-lg btn-block btn-outline-success" href="{% url 'blog:publication_detail' publication.pk %}">{{publication.heading}}</a>
+                    <p class="card-text">{{publication.text|truncatechars:200}}</p>
+                    <p>Просмотров: {{publication.views_counter}}</p>
+                </div>
+            </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

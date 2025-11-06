@@ -4,13 +4,37 @@
 
 {% block content %}
 {% include 'header.html' %}
-    <div class="container card shadow-sm" style="display: flex; align-items: center;">
-        <h1> {{product.product_name}} </h1>
-        <h6> Категория: {{product.category}} </h6>
-        <img src="/media/{{ product.image }}" alt="Нет изображения" style="justify-content: center;">
-        <h2>Цена - {{product.price}}</h2>
-        <div class="card-body">
-            <p class="card-text">Описание: {{product.description | truncatechars:100 | default:"Описание отсутствует"}}</p>
+<div class="container card shadow-sm" style="display: flex; align-items: center;">
+
+    <img src="/media/{{ product.image }}" alt="Нет изображения" style="justify-content: center;">
+    <div class="row">
+        <div class="col-8">
+            <h1> {{product.product_name}} </h1>
+            <h6> Категория: {{product.category}} </h6>
+            <h2>Цена - {{product.price}}</h2>
+            <div class="card-body">
+                <p class="card-text">Описание: {{product.description}}</p>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <div class="row" style="justify-content: space-between;">
+                <a href="{% url 'catalog:product_form' product.pk %}" class="btn btn-secondary"
+                   style="margin: 3px;">Редактировать</a>
+                <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-danger"
+                   style="margin: 3px;">Удалить</a>
+                <a href="{% url 'catalog:home' %}" class="btn btn-primary" style="margin: 3px;">Вернуться
+                    к списку</a>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" {% if product.is_active %}checked{% else %}{% endif %}>
+                <label class="form-check-label" for="flexCheckChecked">
+                    Доступен
+                </label>
+            </div>
         </div>
     </div>
+
+</div>
+
 {% endblock %}

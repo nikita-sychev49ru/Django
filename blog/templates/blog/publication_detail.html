@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}{{publication.heading}}{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+<div class="container mt10"
+     style="display: flex; background-color: linear-gradient(to bottom, blue, white); padding: 3px;">
+    <div class="row">
+        <div class="col-2">
+            <img src="/media/{{ publication.preview }}" alt="Нет изображения"
+                 style="max-width: 100%; max-height: 100%; object-fit: cover; margin: 5px;"/>
+        </div>
+
+        <div class="col-10">
+            <div class="row"
+                 style="display: flex; background-color: white; align-items: center; border-bottom: 1px solid white; margin-bottom: 30px;">
+                <div class="col-7">
+                    <div class="row">
+                        <h2>{{publication.heading}}</h2>
+                    </div>
+
+                    <div class="row">
+                        <p class="card-text">{{publication.text}}</p>
+                    </div>
+                    <div class="row">
+                        <p>Просмотров: {{publication.views_counter}}</p>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <div class="row" style="justify-content: space-between;">
+                        <a href="{% url 'blog:publication_edit' publication.pk %}" class="btn btn-secondary"
+                           style="margin: 3px;">Редактировать</a>
+                        <a href="{% url 'blog:publication_delete' publication.pk %}" class="btn btn-danger"
+                           style="margin: 3px;">Удалить</a>
+                        <a href="{% url 'blog:publication_list' %}" class="btn btn-primary" style="margin: 3px;">Вернуться
+                            к списку</a>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
