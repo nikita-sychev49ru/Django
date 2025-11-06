@@ -1,28 +1,39 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import ListView, TemplateView, DetailView, DeleteView
 
+from .forms import ProductForm
 from .models import Product
 
 
-def home(request):
-    products = Product.objects.all()
-    context = {"products": products}
-    return render(request, "home.html", context=context)
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    template_name = 'catalog/product_form.html'
+    success_url = reverse_lazy('catalog:home')
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    template_name = 'catalog/product_form.html'
+    success_url = reverse_lazy('catalog:home')
+
+class ProductListView(ListView):
+    model = Product
+    template_name = 'catalog/home.html'
+    context_object_name = 'products'
+
+class ContactsTemplateView(TemplateView):
+    template_name = 'catalog/contacts.html'
 
 
-def contacts(request):
-    if request.method == "POST":
-        # Получение данных из формы
-        name = request.POST.get("name")
-        phone = request.POST.get("phone")
-        message = request.POST.get("message")
-        # Обработка данных (например, сохранение в БД, отправка email и т. д.)
-        # Здесь мы просто возвращаем простой ответ
-        return HttpResponse(f"Спасибо, {name}! Ваше сообщение получено и ваш номер телефона {phone} записан.")
-    return render(request, "contacts.html")
+class ProductCardDetailView(DetailView):
+    model = Product
+    template_name = 'catalog/product_card.html'
+    context_object_name = 'product'
 
-
-def product_card(request, pk):
-    product = Product.objects.get(id=pk)
-    context = {"product": product}
-    return render(request, "product_card.html", context=context)
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'catalog/product_confirm_delete.html'
+    success_url = reverse_lazy('catalog:home')
