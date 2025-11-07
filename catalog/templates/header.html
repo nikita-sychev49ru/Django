@@ -1,6 +1,20 @@
 <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
+  <nav class="container-fluid">
     <h3 class="my-0 mr-md-auto font-weight-normal" style="color: green;">SkyAppStore</h3>
+    <nav class="ms-5">
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'users:logout' %}" style="display: inline;">
+                {% csrf_token %}
+                <button class="p-2 btn btn-outline-dark btn-lg" type="submit">Выйти
+                </button>
+            </form>
+        {% else %}
+            <nav class="ms-5">
+                <a class="p-2 btn btn-warning btn-lg" href="{% url 'users:login' %}">Авторизоваться</a>
+                <a class="p-2 btn btn-outline-dark btn-lg" href="{% url 'users:register' %}">Регистрация</a>
+            </nav>
+        {% endif %}
+    </nav>
     <nav class="ms-5">
         <a class="p-2 btn btn-outline-success btn-lg" href="/">Каталог</a>
         <a class="p-2 btn btn-outline-success btn-lg" href="/contacts/">Контакты</a>
