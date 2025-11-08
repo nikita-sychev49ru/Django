@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Список продуктов по категории{% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+<div class="row">
+    <a href="{% url 'catalog:product_form' %}" class="btn btn-lg btn-block btn-primary" type="submit"
+       style="box-shadow: 4px 4px 10px white; margin-bottom: 30px; margin-top: 30px;">Добавить продукт</a>
+</div>
+<div class="container">
+    <h2>Продукты категории: {{ current_category.category_name }}</h2>
+    <p>{{ current_category.description }}</p>
+
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.product_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.product_name }}</h5>
+                    <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                    <p class="text-success">Цена: {{ product.price }} руб.</p>
+                    <a href="#" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p class="text-center">В этой категории пока нет продуктов.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'catalog:home' %}" class="btn btn-secondary mt-3">← Назад к всем категориям</a>
+</div>
+{% endblock %}
