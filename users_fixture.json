@@ -1,0 +1,102 @@
+[
+{
+    "model": "users.customuser",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$DUmXAYfs0K6raK1Bjkkzat$dam5It8Cz8+MtYfPdWcZ64BmIKljpWXvOL9fatuTyQ0=",
+        "last_login": "2025-08-16T13:33:23.701Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-08-13T17:30:14Z",
+        "username": "ADMIN",
+        "email": "skyappstore.a@gmail.com",
+        "phone": null,
+        "country": null,
+        "avatar": "images/placeholder.png",
+        "groups": [
+            1,
+            2,
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$GkEEQBEA2Yk3YyBzUFufPb$zN7q1s6WtjeUXKsV2b8c/j7zRj6G6FX9fHAq+c9bwnw=",
+        "last_login": "2025-08-14T16:08:07Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-08-14T16:08:07Z",
+        "username": "SkyAppStore-рассылка",
+        "email": "skyappstore@yandex.ru",
+        "phone": null,
+        "country": null,
+        "avatar": "images/placeholder.png",
+        "groups": [
+            2
+        ],
+        "user_permissions": [
+            33,
+            34,
+            35,
+            36
+        ]
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$YQOOyoy4spCeYsCyMfC2iC$MQD7gxD3e+WCfOf2fTr4WE+W633PUfIYXFWNf816WmE=",
+        "last_login": "2025-08-16T13:48:13.744Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-08-14T16:16:31Z",
+        "username": "Moderator",
+        "email": "o.niklashkova@gmail.com",
+        "phone": null,
+        "country": null,
+        "avatar": "images/placeholder.png",
+        "groups": [
+            1,
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.customuser",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$AW5iYCFteLXZUpWr5ztuDb$IdrLh9pwEgcsmYzsiDIOotH4hZE9fy8yg6a1BwOK7Z4=",
+        "last_login": "2025-08-16T13:10:47.824Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-08-16T08:12:55Z",
+        "username": "Simple_user",
+        "email": "o.niklashkova@ptk-sm.ru",
+        "phone": null,
+        "country": null,
+        "avatar": "images/placeholder.png",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+}
+]

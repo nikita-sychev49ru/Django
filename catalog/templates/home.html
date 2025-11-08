@@ -5,38 +5,40 @@
 {% block content %}
 {% include 'header.html' %}
 <div class="row">
-    <a href="{% url 'catalog:product_form' %}" class="btn btn-lg btn-block btn-primary" type="submit" style="box-shadow: 4px 4px 10px white; margin-bottom: 30px; margin-top: 30px;">Добавить продукт</a>
+    <a href="{% url 'catalog:product_form' %}" class="btn btn-lg btn-block btn-primary" type="submit"
+       style="box-shadow: 4px 4px 10px white; margin-bottom: 30px; margin-top: 30px;">Добавить продукт</a>
 </div>
 <div class="row">
     {% for product in products %}
+    {% if product.is_published %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card h-100 box-shadow">
             <div class="card-header" style="background: yellow;">
                 <div class="d-grid gap-2">
-                    <a class="btn btn-outline-success btn-lg" href="product/{{product.id}}/">{{product.product_name}}</a>
+                    <a class="btn btn-outline-success btn-lg"
+                       href="product/{{product.id}}/">{{product.product_name}}</a>
                 </div>
 
             </div>
             <div class="card-body d-flex flex-column">
                 <div>
                     <h6> Категория: {{product.category}} </h6>
-                    <img src="/media/{{ product.image }}" alt="Нет изображения" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                    <img src="/media/{{ product.image }}" alt="Нет изображения"
+                         style="max-width: 100%; max-height: 100%; object-fit: cover;">
                     <p class="card-text">Описание: {{product.description|truncatechars:100|default:"Описание отсутствует"}}</p>
                 </div>
                 <div class="mt-auto">
                     <h1 class="card-title pricing-card-title">{{product.price}}</h1>
                 </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" {% if product.is_active %}checked{% else %}{% endif %}>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Доступен
-                </label>
-            </div>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-success" style="box-shadow: 4px 4px 10px green;">Купить</button>
+
+                <button type="button" class="btn btn-lg btn-block btn-outline-success"
+                        style="box-shadow: 4px 4px 10px green;">Купить
+                </button>
 
             </div>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 {% endblock %}
