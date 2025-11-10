@@ -92,11 +92,7 @@ class ProductListView(ListView):
     context_object_name = 'products'
 
     def get_queryset(self):
-        queryset = cache.get('products_queryset')
-        if not queryset:
-            queryset = super().get_queryset()
-            cache.set('products_queryset', queryset, 60 * 15)
-        return queryset
+        return get_cached_products()
 
 
 class ProductByCategoryListView(LoginRequiredMixin, ListView):
