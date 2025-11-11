@@ -11,7 +11,7 @@ from django.utils.decorators import method_decorator
 
 from .forms import ProductForm, ProductModeratorForm
 from .models import Product, Category
-from .services import get_products_by_category
+from .services import get_products_by_category, get_cached_products
 
 
 class ProductUnpublishedView(LoginRequiredMixin, View):
